@@ -82,3 +82,5 @@ To https://github.com/charluzzo91/digital-marketing-services.git
 To https://github.com/charluzzo91/digital-marketing-services.git
    0997330..2422168  main -> main
 [Wed Jun 24 11:00:04 EDT 2026] Sync complete.
+fatal: unable to access 'https://github.com/charluzzo91/digital-marketing-services.git/': Could not resolve host: github.com
+[Wed Jun 24 12:00:39 EDT 2026] Sync complete.
