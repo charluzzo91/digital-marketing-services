@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+/* ============================================================
+   TOM AND GERRY'S — DESIGN TOKENS
+   Palette verified against WCAG 2.x. See brand/DESIGN-DIRECTION.md §2.
+   HARD RULES:
+     - --ochre and --sage are NEVER text on cream (2.39:1 / 2.01:1 = fail).
+       They are graphic/fill only.
+     - Accent text on cream  -> --ochre-text     (4.71:1 PASS)
+     - Accent text on dark   -> --ochre-on-dark  (4.83:1 on forest, PASS)
+   ============================================================ */
+@theme {
+  --color-paper:        #FBF8F0;
+  --color-cream:        #F4EEDC;
+  --color-sage-bg:      #DCE3D3;
+  --color-sage:         #9EAF91;
+  --color-forest:       #214E3A;
+  --color-forest-hover: #1A3F2F;
+  --color-ink:          #122A20;
+  --color-ochre:        #C6923C;
+  --color-ochre-text:   #8A6220;
+  --color-ochre-on-dark:#E0B25C;
+  --color-error:        #A33B2A;
+
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-body:    var(--font-chivo), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  --ease-out-brand: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  --border-hair: color-mix(in srgb, #122A20 14%, transparent);
+  --gutter: clamp(20px, 5vw, 80px);
+  --section-y: clamp(64px, 9vw, 128px);
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* --- Typography primitives --- */
+.u-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 125%;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.92;
+}
+.u-h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 125%;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+  line-height: 1;
+}
+.u-h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-stretch: 112%;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+/* Stamped industrial micro-label */
+.u-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  line-height: 1.2;
+}
+.u-measure { max-width: 68ch; }
+
+/* --- Layout --- */
+.u-wrap {
+  width: 100%;
+  max-width: 1360px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.u-section { padding-block: var(--section-y); }
+
+/* --- Focus: visible everywhere, 3:1 against both grounds --- */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-ochre-text);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.on-dark :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline-color: var(--color-ochre-on-dark);
+}
+
+/* --- The "pressed into the page" button mechanic --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  min-width: 44px;
+  padding-inline: 24px;
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--color-ink);
+  transition: transform 160ms var(--ease-out-brand), box-shadow 160ms var(--ease-out-brand),
+              background-color 160ms var(--ease-out-brand);
+}
+.btn:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--color-ink); }
+.btn:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--color-ink); }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; box-shadow: 4px 4px 0 var(--color-ink); }
+
+.btn--primary { background: var(--color-forest); color: var(--color-cream); }
+.btn--primary:hover { background: var(--color-forest-hover); }
+.btn--secondary { background: transparent; color: var(--color-ink); }
+.btn--secondary:hover { background: color-mix(in srgb, var(--color-sage) 34%, transparent); }
+
+.on-dark .btn { border-color: var(--color-cream); box-shadow: 4px 4px 0 var(--color-ink); }
+.on-dark .btn--secondary { color: var(--color-cream); }
+
+/* --- Paper grain: the one permitted texture --- */
+.u-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* --- Reduced motion: collapse everything to opacity or nothing --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .btn:hover, .btn:active { transform: none; box-shadow: 4px 4px 0 var(--color-ink); }
+}
+
+/* --- Skip link --- */
+.u-skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--color-forest);
+  color: var(--color-cream);
+  padding: 12px 20px;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+}
+.u-skip:focus { left: 8px; top: 8px; }
