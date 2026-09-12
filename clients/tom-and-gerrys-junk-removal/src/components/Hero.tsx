@@ -87,7 +87,11 @@ export function Hero() {
               transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
               className="relative"
             >
-              <MascotStanding className="mx-auto h-auto w-full max-w-[380px]" />
+              <MascotStanding
+                alt="Tom and Gerry's mascot, a workman mouse in a cap and work gloves, arms crossed"
+                priority
+                className="mx-auto h-auto w-full max-w-[380px]"
+              />
             </motion.div>
           </motion.div>
         </div>

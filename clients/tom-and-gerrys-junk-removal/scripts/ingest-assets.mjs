@@ -114,6 +114,34 @@ async function ingestImage(file, info) {
   return { category: cat, written };
 }
 
+/**
+ * Generative models often DRAW a transparency checkerboard instead of producing alpha.
+ * The file then looks transparent in a viewer and ships as visible grey squares.
+ * Heuristic: sample a corner patch; if it has no alpha but is dominated by exactly two
+ * near-white greys in similar proportion, it is almost certainly painted.
+ */
+async function looksLikePaintedCheckerboard(file) {
+  try {
+    const { data, info } = await sharp(file)
+      .extract({ left: 8, top: 8, width: 160, height: 100 }).raw()
+      .toBuffer({ resolveWithObject: true });
+    const buckets = new Map();
+    let n = 0;
+    for (let i = 0; i < data.length; i += info.channels) {
+      const [r, g, b] = [data[i], data[i + 1], data[i + 2]];
+      if (r < 200 || g < 200 || b < 200) return false;      // real artwork in the corner
+      if (Math.abs(r - g) > 6 || Math.abs(g - b) > 6) return false; // not grey
+      const k = Math.round(r / 6) * 6;
+      buckets.set(k, (buckets.get(k) || 0) + 1);
+      n++;
+    }
+    const top = [...buckets.values()].sort((a, b) => b - a).slice(0, 2);
+    if (top.length < 2) return false;
+    const [a, b] = top;
+    return (a + b) / n > 0.6 && b / a > 0.3;   // two tones, both well represented
+  } catch { return false; }
+}
+
 async function ffmpegAvailable() {
   try { await run("ffmpeg", ["-version"]); return true; } catch { return false; }
 }
@@ -152,7 +180,13 @@ async function main() {
     console.error(`Inbox missing: ${path.relative(ROOT, INBOX)}`);
     process.exit(1);
   }
-  const entries = (await readdir(INBOX)).filter((f) => !f.startsWith(".") && f !== "README.md");
+  // Reference-only material (character sheets, style probes) is archived in the
+  // inbox for provenance but must never become a production asset.
+  const REFERENCE_ONLY = /character-sheet|probes|reference|^ref[_-]/i;
+  const all = (await readdir(INBOX)).filter((f) => !f.startsWith(".") && f !== "README.md");
+  const skipped = all.filter((f) => REFERENCE_ONLY.test(f));
+  const entries = all.filter((f) => !REFERENCE_ONLY.test(f));
+  if (skipped.length) console.log(`\nSkipping ${skipped.length} reference-only file(s): ${skipped.join(", ")}`);
   if (!entries.length) {
     console.log("Inbox is empty.\n");
     console.log("Drop Higgsfield downloads into assets/higgsfield-inbox/, then re-run.");
@@ -178,6 +212,9 @@ async function main() {
       if (info.width < 1000) console.log(`     ⚠  under 1000px wide — likely too small for hero use`);
       if (!info.alpha && categorize(name) === "mascot")
         console.log(`     ⚠  no alpha channel — mascot art should be transparent; re-export or run background removal`);
+      if (!info.alpha && (await looksLikePaintedCheckerboard(file)))
+        console.log(`     ⚠  background looks like a PAINTED checkerboard, not real transparency — ` +
+                    `it will ship as visible squares. Regenerate on a plain solid background.`);
 
       if (INSPECT_ONLY) { console.log(); continue; }
       const res = await ingestImage(file, info);

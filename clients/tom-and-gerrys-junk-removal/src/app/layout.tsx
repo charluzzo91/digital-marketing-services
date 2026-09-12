@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: BUSINESS.BUSINESS_NAME_FULL,
   },
   twitter: { card: "summary_large_image", title, description },
-  icons: { icon: "/icon.svg" },
+  icons: { icon: "/favicon-32.png", apple: "/apple-icon.png" },
 };
 
 export const viewport = { width: "device-width", initialScale: 1, themeColor: "#F4EEDC" };

@@ -1,0 +1,174 @@
+{
+  "assets": [
+    {
+      "source": "2026-09-10_mascot-character-sheet_gpt-image-2_v1.png",
+      "ingested": "2026-09-12T17:39:49.464Z",
+      "category": "mascot",
+      "kind": "image",
+      "format": "png",
+      "width": 2048,
+      "height": 1360,
+      "aspect": "128:85",
+      "alpha": false,
+      "bytes": 2369666,
+      "outputs": [
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v1.webp",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v1.avif",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v1-400w.webp",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v1-400w.avif",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v1-800w.webp",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v1-800w.avif",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v1-1200w.webp",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v1-1200w.avif",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v1-1600w.webp",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v1-1600w.avif"
+      ]
+    },
+    {
+      "source": "2026-09-10_mascot-character-sheet_gpt-image-2_v2.png",
+      "ingested": "2026-09-12T17:40:21.476Z",
+      "category": "mascot",
+      "kind": "image",
+      "format": "png",
+      "width": 2048,
+      "height": 1360,
+      "aspect": "128:85",
+      "alpha": false,
+      "bytes": 2396914,
+      "outputs": [
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v2.webp",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v2.avif",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v2-400w.webp",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v2-400w.avif",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v2-800w.webp",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v2-800w.avif",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v2-1200w.webp",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v2-1200w.avif",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v2-1600w.webp",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v2-1600w.avif"
+      ]
+    },
+    {
+      "source": "2026-09-10_mascot-character-sheet_gpt-image-2_v3-FINAL.png",
+      "ingested": "2026-09-12T17:40:57.003Z",
+      "category": "mascot",
+      "kind": "image",
+      "format": "png",
+      "width": 2048,
+      "height": 1360,
+      "aspect": "128:85",
+      "alpha": false,
+      "bytes": 2478620,
+      "outputs": [
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v3-final.webp",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v3-final.avif",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v3-final-400w.webp",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v3-final-400w.avif",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v3-final-800w.webp",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v3-final-800w.avif",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v3-final-1200w.webp",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v3-final-1200w.avif",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v3-final-1600w.webp",
+        "public/brand/mascot/2026-09-10-mascot-character-sheet-gpt-image-2-v3-final-1600w.avif"
+      ]
+    },
+    {
+      "source": "2026-09-10_mascot-probes-ABC_gpt-image-2_v1.png",
+      "ingested": "2026-09-12T17:43:18.894Z",
+      "category": "mascot",
+      "kind": "image",
+      "format": "png",
+      "width": 2048,
+      "height": 1360,
+      "aspect": "128:85",
+      "alpha": false,
+      "bytes": 2991584,
+      "outputs": [
+        "public/brand/mascot/2026-09-10-mascot-probes-abc-gpt-image-2-v1.webp",
+        "public/brand/mascot/2026-09-10-mascot-probes-abc-gpt-image-2-v1.avif",
+        "public/brand/mascot/2026-09-10-mascot-probes-abc-gpt-image-2-v1-400w.webp",
+        "public/brand/mascot/2026-09-10-mascot-probes-abc-gpt-image-2-v1-400w.avif",
+        "public/brand/mascot/2026-09-10-mascot-probes-abc-gpt-image-2-v1-800w.webp",
+        "public/brand/mascot/2026-09-10-mascot-probes-abc-gpt-image-2-v1-800w.avif",
+        "public/brand/mascot/2026-09-10-mascot-probes-abc-gpt-image-2-v1-1200w.webp",
+        "public/brand/mascot/2026-09-10-mascot-probes-abc-gpt-image-2-v1-1200w.avif",
+        "public/brand/mascot/2026-09-10-mascot-probes-abc-gpt-image-2-v1-1600w.webp",
+        "public/brand/mascot/2026-09-10-mascot-probes-abc-gpt-image-2-v1-1600w.avif"
+      ]
+    },
+    {
+      "source": "mascot-arms-crossed.png",
+      "ingested": "2026-09-12T17:46:04.778Z",
+      "category": "mascot",
+      "kind": "image",
+      "format": "png",
+      "width": 520,
+      "height": 931,
+      "aspect": "520:931",
+      "alpha": true,
+      "bytes": 562682,
+      "outputs": [
+        "public/brand/mascot/mascot-arms-crossed.webp",
+        "public/brand/mascot/mascot-arms-crossed.avif",
+        "public/brand/mascot/mascot-arms-crossed-400w.webp",
+        "public/brand/mascot/mascot-arms-crossed-400w.avif",
+        "public/brand/mascot/mascot-arms-crossed.png"
+      ]
+    },
+    {
+      "source": "mascot-front.png",
+      "ingested": "2026-09-12T17:46:11.554Z",
+      "category": "mascot",
+      "kind": "image",
+      "format": "png",
+      "width": 550,
+      "height": 913,
+      "aspect": "50:83",
+      "alpha": true,
+      "bytes": 609150,
+      "outputs": [
+        "public/brand/mascot/mascot-front.webp",
+        "public/brand/mascot/mascot-front.avif",
+        "public/brand/mascot/mascot-front-400w.webp",
+        "public/brand/mascot/mascot-front-400w.avif",
+        "public/brand/mascot/mascot-front.png"
+      ]
+    },
+    {
+      "source": "mascot-head.png",
+      "ingested": "2026-09-12T17:47:17.644Z",
+      "category": "mascot",
+      "kind": "image",
+      "format": "png",
+      "width": 574,
+      "height": 744,
+      "aspect": "287:372",
+      "alpha": true,
+      "bytes": 441999,
+      "outputs": [
+        "public/brand/mascot/mascot-head.webp",
+        "public/brand/mascot/mascot-head.avif",
+        "public/brand/mascot/mascot-head-400w.webp",
+        "public/brand/mascot/mascot-head-400w.avif",
+        "public/brand/mascot/mascot-head.png"
+      ]
+    },
+    {
+      "source": "mascot-side.png",
+      "ingested": "2026-09-12T17:47:21.126Z",
+      "category": "mascot",
+      "kind": "image",
+      "format": "png",
+      "width": 393,
+      "height": 918,
+      "aspect": "131:306",
+      "alpha": true,
+      "bytes": 412401,
+      "outputs": [
+        "public/brand/mascot/mascot-side.webp",
+        "public/brand/mascot/mascot-side.avif",
+        "public/brand/mascot/mascot-side.png"
+      ]
+    }
+  ]
+}

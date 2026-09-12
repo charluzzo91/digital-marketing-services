@@ -71,3 +71,34 @@ This sheet becomes the reference image for every later pose.
 - [ ] Guardrail block present in the prompt
 - [ ] Negative prompt present
 - [ ] Logged in `GENERATION-LOG.md`
+
+---
+
+## ✅ LOCKED — Direction A, 2026-09-10
+
+**Approved treatment:** **A — Vintage decal.** Heavy uniform outline, slightly rounded geometric
+shapes, subtle off-register print feel. Chosen because the outline survives 32px, one-colour
+printing, vehicle vinyl and stencil work. B was rejected (gradient shading the spec forbids, no
+outline so it dissolves at small size). C was rejected (a render of a physical embroidered patch —
+thread cannot be vectorised).
+
+**Approved fur — sampled from the probe, not guessed:**
+
+| Token | Hex | Use |
+|---|---|---|
+| `fur` | `#6F7765` | main coat |
+| `fur-light` | `#96927D` | muzzle, inner highlights |
+| `fur-dark` | `#4E5548` | shadow shapes |
+
+It reads as grey but measures **hue 87°, saturation 8% — a desaturated olive**, the same family as
+sage `#9EAF91`. State these hex values explicitly in every prompt or the tone will drift.
+
+**⚠ DARK-GROUND RULE:** `fur` on `forest` is only **2.03:1**, and `fur-dark` on forest is **1.23:1**.
+Against the forest About band the mascot MUST carry a **cream `#F4EEDC` outline**, not the
+near-black one. Ink outline on dark = no silhouette.
+
+**Output requirements the probe sheet did not meet — fix these on the real run:**
+- **Transparent background.** The probe came back opaque; ingestion flags it.
+- **No captions, labels or lettering anywhere in the image.**
+- Simplify the face for the head-icon variant — whiskers and fine facial detail mush below ~64px.
+  The icon is a redraw, not a shrink.

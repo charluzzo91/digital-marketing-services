@@ -29,7 +29,8 @@ export function StickyBar() {
       }`}
       // Hidden from AT when off-screen so it isn't a phantom tab stop.
       aria-hidden={!show}
-      {...(!show ? { inert: "" as unknown as boolean } : {})}
+      // React 19 takes `inert` as a real boolean; false removes the attribute.
+      inert={!show}
     >
       <div className="flex gap-2 p-2.5" style={{ paddingBottom: "max(10px, env(safe-area-inset-bottom))" }}>
         {tel ? (

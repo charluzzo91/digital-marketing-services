@@ -22,6 +22,22 @@
   --color-ochre-on-dark:#E0B25C;
   --color-error:        #A33B2A;
 
+  /* Mascot fur — sampled from the approved Direction A probe.
+     Desaturated olive (H 87 S 8), same family as sage. NOT a neutral grey.
+     fur-mid on cream 4.02:1 PASS, but on forest only 2.03:1 — on dark grounds
+     the mascot MUST use a cream outline or he loses his silhouette. */
+  --color-fur:       #787860;
+  --color-fur-light: #9A9A80;
+  --color-fur-dark:  #565643;
+
+  /* Mascot-only values, sampled from the LOCKED v3 character sheet.
+     --mascot-cream is deliberately DEEPER than --color-cream: a page-cream shirt
+     on a cream ground dissolves. --mascot-line is the reference's dark olive,
+     softer than --color-ink, which is what keeps him warm rather than harsh. */
+  --color-mascot-cream: #EAD8B4;
+  --color-mascot-line:  #2B3A30;
+  --color-mascot-sage:  #9CA284;
+
   --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
   --font-body:    var(--font-chivo), ui-sans-serif, system-ui, sans-serif;
 

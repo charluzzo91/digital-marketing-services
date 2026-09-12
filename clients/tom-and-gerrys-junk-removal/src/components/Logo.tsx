@@ -12,7 +12,7 @@ import { BUSINESS } from "@/config/business";
 export function Logo({ compact = false }: { compact?: boolean }) {
   return (
     <span className="inline-flex items-center gap-2.5">
-      <MascotHead className="h-9 w-9 shrink-0" />
+      <MascotHead alt="" className="h-10 w-auto shrink-0" sizes="44px" />
       {!compact && (
         <span className="leading-none">
           <span className="u-h3 block text-[0.98rem] tracking-tight">

@@ -1,5 +1,5 @@
 import { Logo } from "./Logo";
-import { MascotWithCart } from "./Mascot";
+import { MascotWithCart } from "./MascotWithCart";
 import { BUSINESS, telHref, mailHref } from "@/config/business";
 
 export function Footer() {

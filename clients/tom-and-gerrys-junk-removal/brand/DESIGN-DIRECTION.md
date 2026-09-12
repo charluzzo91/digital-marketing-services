@@ -317,3 +317,58 @@ licensed, insured, same-day, residential/commercial, locally/family owned, eco/r
   a separate SVG module. Both are replaceable without rebuilding. Not a legal opinion.
 - 21st.dev Magic MCP is unauthenticated — re-key it, or I proceed with the 21st CLI skills only
   (which is fine; Magic is inspiration, not a dependency).
+
+---
+
+## Addendum — Mascot locked, 2026-09-12
+
+**Character LOCKED at v3.** Master: `public/brand/mascot/mascot-master-reference.png`
+(transparent, background removed by border flood fill so the sage inner ears survive —
+a naive colour key would have punched holes, sage `#9CA284` being ~14 points from the
+`#8FA185` background).
+
+Took three rounds: v1 read as a bear with heroic proportions and lost the gloves; v2 fixed
+species/build/gloves but the face was too sharp (inner brows angled down = anger signal); v3
+flipped the brows level, opened and centred the eyes, shortened the snout to blunt, rounded
+the jaw. Approved.
+
+### Reversal: the mascot ships as RASTER, not hand-authored SVG
+
+§7 originally said all AI art would be rebuilt as vector in-repo. **That held for the logo
+and has been abandoned for the character.** Hand-vectorising a detailed illustrated character
+measurably degraded it — the hand-authored SVG lost the face entirely. The approved artwork is
+better than what hand-authoring produces, so it ships as optimised transparent AVIF/WebP with
+PNG fallback.
+
+Split that now applies:
+
+| Asset | Format | Why |
+|---|---|---|
+| Character poses | AVIF/WebP/PNG, transparent | Detailed illustration; vectorising destroys it |
+| Junk cart | SVG (`Cart.tsx`) | Simple geometric object; vector is correct and cheap |
+| Logo wordmark | Live text, Archivo | True vector, selectable, accessible |
+| Favicon / app icon | PNG from approved art | Hand-drawn simplification looked wrong |
+
+Hero AVIF is 21KB. Every pose carries explicit width/height, so no CLS.
+
+### Mascot palette — sampled from the locked sheet, not guessed
+
+`--color-mascot-cream #EAD8B4` is deliberately **deeper** than `--color-cream #F4EEDC`:
+a page-cream shirt on a cream ground dissolves. `--color-mascot-line #2B3A30` is the
+reference's dark olive rather than `--color-ink`, which is what keeps him warm rather than harsh.
+Fur `#787860`, sage inner ear `#9CA284`.
+
+**Dark-ground rule still applies:** fur on forest is ~2:1. In the forest About band the mascot
+sits inside a bordered panel rather than relying on its own outline.
+
+### Pipeline hardening added along the way
+- Ingest detects **painted checkerboards** — v1 returned a drawn checkerboard, not alpha, which
+  would have shipped as visible squares.
+- Ingest skips reference-only files (`character-sheet`, `probes`) so they never become assets.
+- Crops are despeckled via connected-component filtering to drop fragments bled in from
+  neighbouring figures on the sheet.
+
+### Outstanding
+Pose crops are ~520px wide (four figures on one 2048px sheet). Fine at current display sizes,
+tight for 2× retina on the hero. If it matters, regenerate the hero pose **alone** at 2K on the
+web route — 0 credits.

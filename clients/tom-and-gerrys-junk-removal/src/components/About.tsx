@@ -36,7 +36,7 @@ export function About() {
         <div className="lg:col-span-5">
           <div className="relative mx-auto max-w-[300px]">
             <div aria-hidden className="absolute inset-x-2 bottom-4 top-8 rotate-2 rounded-sm border-2 border-cream/25" />
-            <MascotStanding className="relative h-auto w-full" />
+            <MascotStanding alt="" className="relative h-auto w-full" sizes="300px" />
           </div>
         </div>
       </div>

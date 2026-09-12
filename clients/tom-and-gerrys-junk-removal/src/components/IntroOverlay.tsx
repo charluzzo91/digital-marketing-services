@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { MascotWithCart } from "./Mascot";
+import { MascotWithCart } from "./MascotWithCart";
 
 /**
  * NON-BLOCKING branded intro.
